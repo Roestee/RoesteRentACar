@@ -1,6 +1,20 @@
+using RoesteRentACar.Application.Features.CQRS.Handlers.AboutHandlers;
+using RoesteRentACar.Application.Interfaces;
+using RoesteRentACar.Persistence.Context;
+using RoesteRentACar.Persistence.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<RentACarDbContext>();
+
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
+builder.Services.AddScoped<GetAboutQueryHandler>();
+builder.Services.AddScoped<GetAboutByIdQueryHandler>();
+builder.Services.AddScoped<AddAboutCommandHandler>();
+builder.Services.AddScoped<UpdateAboutCommandHandler>();
+builder.Services.AddScoped<DeleteAboutCommandHandler>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
