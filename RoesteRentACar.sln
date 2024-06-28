@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{30352B29-9060-4F97-8F9A-6A7B77CA2CF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoesteRentACar.Domain", "RoesteRentACar.Domain\RoesteRentACar.Domain.csproj", "{A2F45D01-89E7-4EFD-A17F-114304714B84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2F45D01-89E7-4EFD-A17F-114304714B84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2F45D01-89E7-4EFD-A17F-114304714B84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2F45D01-89E7-4EFD-A17F-114304714B84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2F45D01-89E7-4EFD-A17F-114304714B84}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A2F45D01-89E7-4EFD-A17F-114304714B84} = {30352B29-9060-4F97-8F9A-6A7B77CA2CF6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0900030A-AC84-42BB-B7B2-5275A5A57110}
+	EndGlobalSection
+EndGlobal
