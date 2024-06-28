@@ -15,29 +15,29 @@ namespace RoesteRentACar.Persistence.Repositories
             _dbSet = _context.Set<T>();
         }
 
-        public async Task<List<T>> GetAllAsync(CancellationToken c)
+        public async Task<List<T>> GetAllAsync(CancellationToken c = default)
         {
             return await _dbSet.ToListAsync(c);
         }
 
-        public async Task<T> GetByIdAsync(int id, CancellationToken c)
+        public async Task<T> GetByIdAsync(int id, CancellationToken c = default)
         {
             return await _dbSet.FindAsync(id, c);
         }
 
-        public async Task AddAsync(T entity, CancellationToken c)
+        public async Task AddAsync(T entity, CancellationToken c = default)
         {
             await _dbSet.AddAsync(entity, c);
             await _context.SaveChangesAsync(c);
         }
 
-        public async Task UpdateAsync(T entity, CancellationToken c)
+        public async Task UpdateAsync(T entity, CancellationToken c = default)
         {
             await Task.Run(() => _dbSet.Update(entity), c);
             await _context.SaveChangesAsync(c);
         }
 
-        public async Task DeleteAsync(T entity, CancellationToken c)
+        public async Task DeleteAsync(T entity, CancellationToken c = default)
         {
             await Task.Run(() => _dbSet.Remove(entity), c);
             await _context.SaveChangesAsync(c);
