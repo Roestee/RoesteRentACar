@@ -1,5 +1,6 @@
 using RoesteRentACar.Application.Features.CQRS.Handlers.AboutHandlers;
 using RoesteRentACar.Application.Features.CQRS.Handlers.BannerHandlers;
+using RoesteRentACar.Application.Features.CQRS.Handlers.BrandHandlers;
 using RoesteRentACar.Application.Interfaces;
 using RoesteRentACar.Persistence.Context;
 using RoesteRentACar.Persistence.Repositories;
@@ -22,6 +23,12 @@ builder.Services.AddScoped<GetBannerByIdQueryHandler>();
 builder.Services.AddScoped<AddBannerCommandHandler>();
 builder.Services.AddScoped<UpdateBannerCommandHandler>();
 builder.Services.AddScoped<DeleteBannerCommandHandler>();
+
+builder.Services.AddScoped<GetBrandQueryHandler>();
+builder.Services.AddScoped<GetBrandByIdQueryHandler>();
+builder.Services.AddScoped<AddBrandCommandHandler>();
+builder.Services.AddScoped<UpdateBrandCommandHandler>();
+builder.Services.AddScoped<DeleteBrandCommandHandler>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
