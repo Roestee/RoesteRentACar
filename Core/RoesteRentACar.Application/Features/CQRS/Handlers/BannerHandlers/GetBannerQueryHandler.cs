@@ -18,6 +18,7 @@ namespace RoesteRentACar.Application.Features.CQRS.Handlers.BannerHandlers
             var value = await _repository.GetAllAsync();
             return value.Select(x => new GetBannerQueryResult
             {
+                Id = x.Id,
                 Title = x.Title,
                 Description = x.Description,
                 VideoUrl = x.VideoUrl,
