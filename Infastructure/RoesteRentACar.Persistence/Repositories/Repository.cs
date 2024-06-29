@@ -42,5 +42,10 @@ namespace RoesteRentACar.Persistence.Repositories
             await Task.Run(() => _dbSet.Remove(entity), c);
             await _context.SaveChangesAsync(c);
         }
+
+        public IQueryable<T> GetAllQueryable()
+        {
+            return _dbSet.AsQueryable();
+        }
     }
 }

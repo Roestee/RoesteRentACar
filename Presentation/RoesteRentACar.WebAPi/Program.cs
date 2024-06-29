@@ -1,6 +1,7 @@
 using RoesteRentACar.Application.Features.CQRS.Handlers.AboutHandlers;
 using RoesteRentACar.Application.Features.CQRS.Handlers.BannerHandlers;
 using RoesteRentACar.Application.Features.CQRS.Handlers.BrandHandlers;
+using RoesteRentACar.Application.Features.CQRS.Handlers.VehicleHandlers;
 using RoesteRentACar.Application.Interfaces;
 using RoesteRentACar.Persistence.Context;
 using RoesteRentACar.Persistence.Repositories;
@@ -29,6 +30,13 @@ builder.Services.AddScoped<GetBrandByIdQueryHandler>();
 builder.Services.AddScoped<AddBrandCommandHandler>();
 builder.Services.AddScoped<UpdateBrandCommandHandler>();
 builder.Services.AddScoped<DeleteBrandCommandHandler>();
+
+builder.Services.AddScoped<GetVehicleQueryHandler>();
+builder.Services.AddScoped<GetVehicleWithDetailQueryHandler>();
+builder.Services.AddScoped<GetVehicleByIdQueryHandler>();
+builder.Services.AddScoped<AddVehicleCommandHandler>();
+builder.Services.AddScoped<UpdateVehicleCommandHandler>();
+builder.Services.AddScoped<DeleteVehicleCommandHandler>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
