@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RoesteRentACar.Application.Features.Mediator.Commands.ServiceCommands;
 using RoesteRentACar.Application.Features.Mediator.Queries.ServiceQueries;
