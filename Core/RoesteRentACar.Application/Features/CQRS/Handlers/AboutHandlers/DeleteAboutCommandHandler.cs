@@ -15,8 +15,7 @@ namespace RoesteRentACar.Application.Features.CQRS.Handlers.AboutHandlers
 
         public async Task Handle(DeleteAboutCommand aboutCommand)
         {
-            var value = await _repository.GetByIdAsync(aboutCommand.Id);
-            await _repository.DeleteAsync(value);
+            await _repository.DeleteAsync(await _repository.GetByIdAsync(aboutCommand.Id));
         }
     }
 }
