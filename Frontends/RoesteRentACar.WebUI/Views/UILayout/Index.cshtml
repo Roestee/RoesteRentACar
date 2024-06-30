@@ -1,0 +1,22 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("_HomeLayoutHead")
+<body>
+    @await Component.InvokeAsync("_HomeLayoutNavbar")
+
+    @await Component.InvokeAsync("_HomeLayoutBadge")
+
+    <main>@RenderBody()</main>
+
+    @await Component.InvokeAsync("_HomeLayoutFooter")
+
+    @await Component.InvokeAsync("_HomeLayoutLoader")
+
+    @await Component.InvokeAsync("_HomeLayoutScripts")
+
+</body>
+</html>

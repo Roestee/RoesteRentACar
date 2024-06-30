@@ -5,17 +5,21 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{30352B29-9060-4F97-8F9A-6A7B77CA2CF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoesteRentACar.Domain", "RoesteRentACar.Domain\RoesteRentACar.Domain.csproj", "{A2F45D01-89E7-4EFD-A17F-114304714B84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoesteRentACar.Domain", "RoesteRentACar.Domain\RoesteRentACar.Domain.csproj", "{A2F45D01-89E7-4EFD-A17F-114304714B84}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infastructure", "Infastructure", "{C1289556-E417-44DA-8153-2690FD7DC5BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoesteRentACar.Persistence", "Infastructure\RoesteRentACar.Persistence\RoesteRentACar.Persistence.csproj", "{6CA4D924-E9CA-4815-A545-E8A8D12B9E46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoesteRentACar.Persistence", "Infastructure\RoesteRentACar.Persistence\RoesteRentACar.Persistence.csproj", "{6CA4D924-E9CA-4815-A545-E8A8D12B9E46}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{2E0CA95F-67F4-4106-8B73-12CC6CDD4F82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoesteRentACar.WebAPi", "Presentation\RoesteRentACar.WebAPi\RoesteRentACar.WebAPi.csproj", "{F9156953-3496-40AB-B306-6CE91D9261BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoesteRentACar.WebApi", "Presentation\RoesteRentACar.WebAPi\RoesteRentACar.WebApi.csproj", "{F9156953-3496-40AB-B306-6CE91D9261BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoesteRentACar.Application", "Core\RoesteRentACar.Application\RoesteRentACar.Application.csproj", "{3073303D-531F-41FA-82CB-8FFB8564C4D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoesteRentACar.Application", "Core\RoesteRentACar.Application\RoesteRentACar.Application.csproj", "{3073303D-531F-41FA-82CB-8FFB8564C4D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontends", "Frontends", "{589D6D3F-2757-4025-82D4-D093423DC1B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoesteRentACar.WebUI", "Frontends\RoesteRentACar.WebUI\RoesteRentACar.WebUI.csproj", "{88CC5153-4FAC-47C0-AF60-BB5508726B36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,10 @@ Global
 		{3073303D-531F-41FA-82CB-8FFB8564C4D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3073303D-531F-41FA-82CB-8FFB8564C4D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3073303D-531F-41FA-82CB-8FFB8564C4D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88CC5153-4FAC-47C0-AF60-BB5508726B36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88CC5153-4FAC-47C0-AF60-BB5508726B36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88CC5153-4FAC-47C0-AF60-BB5508726B36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88CC5153-4FAC-47C0-AF60-BB5508726B36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +56,7 @@ Global
 		{6CA4D924-E9CA-4815-A545-E8A8D12B9E46} = {C1289556-E417-44DA-8153-2690FD7DC5BE}
 		{F9156953-3496-40AB-B306-6CE91D9261BC} = {2E0CA95F-67F4-4106-8B73-12CC6CDD4F82}
 		{3073303D-531F-41FA-82CB-8FFB8564C4D5} = {30352B29-9060-4F97-8F9A-6A7B77CA2CF6}
+		{88CC5153-4FAC-47C0-AF60-BB5508726B36} = {589D6D3F-2757-4025-82D4-D093423DC1B4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0900030A-AC84-42BB-B7B2-5275A5A57110}
