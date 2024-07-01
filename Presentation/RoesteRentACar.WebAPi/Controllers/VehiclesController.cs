@@ -11,6 +11,7 @@ namespace RoesteRentACar.WebAPi.Controllers
     {
         private readonly GetVehicleQueryHandler _getVehicleQueryHandler;
         private readonly GetVehicleWithDetailQueryHandler _getVehicleWithDetailQueryHandler;
+        private readonly GetVehicleWithDetailWithCountQueryHandler _getVehicleWithDetailWithCountQueryHandler;
         private readonly GetVehicleByIdQueryHandler _getVehicleByIdQueryHandler;
         private readonly AddVehicleCommandHandler _addVehicleCommandHandler;
         private readonly DeleteVehicleCommandHandler _deleteVehicleCommandHandler;
@@ -19,6 +20,7 @@ namespace RoesteRentACar.WebAPi.Controllers
         public VehiclesController(
             GetVehicleQueryHandler getVehicleQueryHandler,
             GetVehicleWithDetailQueryHandler getVehicleWithDetailQueryHandler,
+            GetVehicleWithDetailWithCountQueryHandler getVehicleWithDetailWithCountQueryHandler,
             GetVehicleByIdQueryHandler getVehicleByIdQueryHandler, 
             AddVehicleCommandHandler addVehicleCommandHandler,
             DeleteVehicleCommandHandler deleteVehicleCommandHandler,
@@ -26,6 +28,7 @@ namespace RoesteRentACar.WebAPi.Controllers
         {
             _getVehicleQueryHandler = getVehicleQueryHandler;
             _getVehicleWithDetailQueryHandler = getVehicleWithDetailQueryHandler;
+            _getVehicleWithDetailWithCountQueryHandler = getVehicleWithDetailWithCountQueryHandler;
             _getVehicleByIdQueryHandler = getVehicleByIdQueryHandler;
             _addVehicleCommandHandler = addVehicleCommandHandler;
             _deleteVehicleCommandHandler = deleteVehicleCommandHandler;
@@ -43,6 +46,13 @@ namespace RoesteRentACar.WebAPi.Controllers
         public async Task<IActionResult> VehicleListWithDetail()
         {
             var values = await _getVehicleWithDetailQueryHandler.Handle();
+            return Ok(values);
+        }
+
+        [HttpGet("VehicleListWithDetailWithCount")]
+        public async Task<IActionResult> VehicleListWithDetailWithCount(int count)
+        {
+            var values = await _getVehicleWithDetailWithCountQueryHandler.Handle(count);
             return Ok(values);
         }
 

@@ -36,6 +36,7 @@ builder.Services.AddScoped<DeleteBrandCommandHandler>();
 
 builder.Services.AddScoped<GetVehicleQueryHandler>();
 builder.Services.AddScoped<GetVehicleWithDetailQueryHandler>();
+builder.Services.AddScoped<GetVehicleWithDetailWithCountQueryHandler>();
 builder.Services.AddScoped<GetVehicleByIdQueryHandler>();
 builder.Services.AddScoped<AddVehicleCommandHandler>();
 builder.Services.AddScoped<UpdateVehicleCommandHandler>();
@@ -55,6 +56,17 @@ builder.Services.AddScoped<DeleteContactCommandHandler>();
 
 builder.Services.AddApplicationServices(builder.Configuration);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+        });
+});
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -70,6 +82,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowAllOrigins");
 
 app.UseAuthorization();
 

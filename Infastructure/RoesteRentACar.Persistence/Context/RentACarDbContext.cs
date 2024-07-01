@@ -21,6 +21,8 @@ namespace RoesteRentACar.Persistence.Context
         public DbSet<VehicleDescription> VehicleDescriptions { get; set; }
         public DbSet<VehicleFeature> VehicleFeatures { get; set; }
         public DbSet<VehiclePricing> VehiclePricings { get; set; }
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
