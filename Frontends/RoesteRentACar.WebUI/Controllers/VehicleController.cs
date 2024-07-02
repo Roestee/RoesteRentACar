@@ -15,6 +15,9 @@ namespace RoesteRentACar.WebUI.Controllers
 
         public async Task<IActionResult> Index()
         {
+            ViewBag.link1 = "Araçlar";
+            ViewBag.title1 = "Araçlarımız";
+
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:7237/api/Vehicles/VehicleListWithDetail");
             if (responseMessage.IsSuccessStatusCode)

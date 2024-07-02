@@ -13,5 +13,7 @@
         public byte Seat { get; set; }
         public byte Luggage { get; set; }
         public string Fuel { get; set; }
+        public string PricingName { get; set; }
+        public decimal PricingAmount { get; set; }
     }
 }

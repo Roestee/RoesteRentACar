@@ -6,6 +6,8 @@ namespace RoesteRentACar.WebUI.Controllers
     {
         public IActionResult Index()
         {
+            ViewBag.title1 = "Hakkımızda";
+            ViewBag.link1 = "Hakkımızda";
             return View();
         }
     }

@@ -18,6 +18,8 @@ namespace RoesteRentACar.Application.Features.CQRS.Handlers.VehicleHandlers
         {
             var values = await _repository.GetAllQueryable()
                 .Include(x=>x.Brand)
+                .Include(x=>x.VehiclePricing)
+                .ThenInclude(x=>x.Pricing)
                 .Select(x=>new GetVehicleWithDetailQueryResult
                 {
                     Id = x.Id,
@@ -30,7 +32,9 @@ namespace RoesteRentACar.Application.Features.CQRS.Handlers.VehicleHandlers
                     Luggage = x.Luggage,
                     Model = x.Model,
                     Seat = x.Seat,
-                    Transmission = x.Transmission
+                    Transmission = x.Transmission,
+                    PricingName = "Günlük",
+                    PricingAmount = x.VehiclePricing.FirstOrDefault(v=>v.Pricing.Name == "Günlük")!.Amount
                 }).ToListAsync();
 
             return values;

@@ -1,6 +1,6 @@
 ﻿namespace RoesteRentACar.Application.Features.CQRS.Results.VehicleResults
 {
-    public class GetVehicleCarWithDetailWithCountQueryResult
+    public class GetVehicleWithDetailWithCountQueryResult
     {
         public int Id { get; set; }
         public int BrandId { get; set; }
@@ -13,5 +13,7 @@
         public byte Luggage { get; set; }
         public string Fuel { get; set; }
         public string BrandName { get; set; }
+        public string PricingName { get; set; }
+        public decimal PricingAmount { get; set; }
     }
 }

@@ -14,13 +14,15 @@ namespace RoesteRentACar.Application.Features.CQRS.Handlers.VehicleHandlers
             _repository = repository;
         }
 
-        public async Task<List<GetVehicleCarWithDetailWithCountQueryResult>> Handle(int count)
+        public async Task<List<GetVehicleWithDetailWithCountQueryResult>> Handle(int count)
         {
             return await _repository.GetAllQueryable()
                 .Include(x=>x.Brand)
+                .Include(x => x.VehiclePricing)
+                .ThenInclude(x => x.Pricing)
                 .OrderByDescending(x=>x.Id)
                 .Take(count)
-                .Select(x=> new GetVehicleCarWithDetailWithCountQueryResult
+                .Select(x=> new GetVehicleWithDetailWithCountQueryResult
                 {
                     Id = x.Id,
                     Model = x.Model,
@@ -32,7 +34,9 @@ namespace RoesteRentACar.Application.Features.CQRS.Handlers.VehicleHandlers
                     Km = x.Km,
                     Luggage = x.Luggage,
                     Seat = x.Seat,
-                    Transmission = x.Transmission
+                    Transmission = x.Transmission,
+                    PricingName = "Günlük",
+                    PricingAmount = x.VehiclePricing.FirstOrDefault(v=>v.Pricing.Name == "Günlük")!.Amount
                 }).ToListAsync();
         }
     }
