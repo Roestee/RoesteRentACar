@@ -30,11 +30,13 @@ namespace RoesteRentACar.WebUI.Controllers
             return View();
         }
 
-        public async Task<IActionResult> BlogDetail(int blogId)
+        public IActionResult BlogDetail(int id)
         {
             ViewBag.link1 = "Blog";
             ViewBag.link2 = "Blog Detayları";
             ViewBag.title1 = "Blog Detayı ve Yorumlar";
+            ViewBag.blogId = id;
+
             return View();
         }
     }

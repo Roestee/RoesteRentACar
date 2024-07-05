@@ -23,6 +23,13 @@ namespace RoesteRentACar.WebApi.Controllers
             return Ok(values);
         }
 
+        [HttpGet("GetTagCloudsByBlogId")]
+        public async Task<IActionResult> GetTagCloudsByBlogId(int blogId)
+        {
+            var values = await _mediator.Send(new GetTagCloudsByBlogIdQuery(blogId));
+            return Ok(values);
+        }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetTagCloud(int id)
         {
@@ -44,7 +51,7 @@ namespace RoesteRentACar.WebApi.Controllers
             return Ok("Etiket bulutu başarıyla silindi.");
         }
 
-        [HttpPost]
+        [HttpPut]
         public async Task<IActionResult> UpdateTagCloud(UpdateTagCloudCommand command)
         {
             await _mediator.Send(command);

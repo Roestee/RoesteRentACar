@@ -1,11 +1,15 @@
-﻿<div class="col-md-8 ftco-animate">
-    <h2 class="mb-3">It is a long established fact a reader be distracted</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, eius mollitia suscipit, quisquam doloremque distinctio perferendis et doloribus unde architecto optio laboriosam porro adipisci sapiente officiis nemo accusamus ad praesentium? Esse minima nisi et. Dolore perferendis, enim praesentium omnis, iste doloremque quia officia optio deserunt molestiae voluptates soluta architecto tempora.</p>
+﻿@model ResultBlogDto
+
+<div class="col-md-8 ftco-animate">
+    <h2 class="mb-3">@Model.Name</h2>
     <p>
-        <img src="~/carbook-master/images/image_5.jpg" alt="" class="img-fluid">
+        @Model.Content
+    </p>
+    <p>
+        <img src="~/@Model.BackgroundImageUrl" alt="" class="img-fluid">
     </p>
 
-    @await Component.InvokeAsync("_HomeLayoutBlogDetailTagClouds")
+    @await Component.InvokeAsync("_HomeLayoutBlogDetailTagClouds", new {id = Model.Id})
     
     @await Component.InvokeAsync("_HomeLayoutBlogDetailAuthorAbout")
 
@@ -13,9 +17,6 @@
         <h3 class="mb-5">6 Yorum</h3>
         @await Component.InvokeAsync("_HomeLayoutCommentListByBlog")
 
-        <!-- END comment-list -->
-
         @await Component.InvokeAsync("_HomeLayoutAddComment")
     </div>
-
 </div>

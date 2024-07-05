@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
 using RoesteRentACar.Application.Interfaces;
 using RoesteRentACar.Persistence.Context;
 
@@ -18,6 +19,11 @@ namespace RoesteRentACar.Persistence.Repositories
         public async Task<List<T>> GetAllAsync(CancellationToken c = default)
         {
             return await _dbSet.ToListAsync(c);
+        }
+
+        public async Task<List<T>> GetAllAsync(Expression<Func<T, bool>> filter, CancellationToken c = default)
+        {
+            return await _dbSet.Where(filter).ToListAsync(c);
         }
 
         public async Task<T> GetByIdAsync(int id, CancellationToken c = default)

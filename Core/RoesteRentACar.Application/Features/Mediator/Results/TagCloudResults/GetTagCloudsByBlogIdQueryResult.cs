@@ -1,6 +1,6 @@
 ﻿namespace RoesteRentACar.Application.Features.Mediator.Results.TagCloudResults
 {
-    public class GetTagCloudByIdQueryResult
+    public class GetTagCloudByFilterQueryResult
     {
         public int Id { get; set; }
         public int BlogId { get; set; }
