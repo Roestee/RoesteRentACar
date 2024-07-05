@@ -10,5 +10,6 @@
         public string BackgroundImageUrl { get; set; }
         public DateTime CreateDate { get; set; }
         public string AuthorName { get; set; }
+        public string CategoryName { get; set; }
     }
 }

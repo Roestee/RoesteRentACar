@@ -1,6 +1,4 @@
-﻿using RoesteRentACar.Domain.Entities;
-
-namespace RoesteRentACar.Application.Features.Mediator.Results.BlogResults
+﻿namespace RoesteRentACar.Application.Features.Mediator.Results.BlogResults
 {
     public class GetBlogWithDetailWithCountQueryResult
     {
@@ -12,5 +10,6 @@ namespace RoesteRentACar.Application.Features.Mediator.Results.BlogResults
         public string BackgroundImageUrl { get; set; }
         public DateTime CreateDate { get; set; }
         public string AuthorName { get; set; }
+        public string CategoryName { get; set; }
     }
 }

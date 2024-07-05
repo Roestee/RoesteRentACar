@@ -11,5 +11,6 @@
         public DateTime CreateDate { get; set; }
         public virtual Author Author { get; set; }
         public virtual Category Category { get; set; }
+        public virtual List<TagCloud> TagClouds { get; set; }
     }
 }
