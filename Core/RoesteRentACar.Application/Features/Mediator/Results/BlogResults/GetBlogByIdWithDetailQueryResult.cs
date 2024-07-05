@@ -1,6 +1,6 @@
-﻿namespace RoesteRentACar.Dto.BlogDtos
+﻿namespace RoesteRentACar.Application.Features.Mediator.Results.BlogResults
 {
-    public class ResultBlogWithDetailDto
+    public class GetBlogByIdWithDetailQueryResult
     {
         public int Id { get; set; }
         public int AuthorId { get; set; }
@@ -9,8 +9,8 @@
         public string Content { get; set; }
         public string BackgroundImageUrl { get; set; }
         public DateTime CreateDate { get; set; }
-        public string AuthorName { get; set; }
         public string CategoryName { get; set; }
+        public string AuthorName { get; set; }
         public string AuthorDescription { get; set; }
         public string AuthorImageUrl { get; set; }
     }

@@ -30,6 +30,13 @@ namespace RoesteRentACar.WebApi.Controllers
             return Ok(value);
         }
 
+        [HttpGet("GetBlogWithDetail")]
+        public async Task<IActionResult> GetBlogWithDetail(int id)
+        {
+            var value = await _mediator.Send(new GetBlogByIdWithDetailQuery(id));
+            return Ok(value);
+        }
+
         [HttpGet("BlogListWithDetail")]
         public async Task<IActionResult> BlogListWithDetail()
         {

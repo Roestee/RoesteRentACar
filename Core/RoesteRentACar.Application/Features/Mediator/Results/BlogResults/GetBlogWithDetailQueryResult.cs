@@ -13,5 +13,7 @@ namespace RoesteRentACar.Application.Features.Mediator.Results.BlogResults
         public string CategoryName { get; set; }
         public string BackgroundImageUrl { get; set; }
         public DateTime CreateDate { get; set; }
+        public string AuthorDescription { get; set; }
+        public string AuthorImageUrl { get; set; }
     }
 }

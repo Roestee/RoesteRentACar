@@ -31,7 +31,9 @@ namespace RoesteRentACar.Application.Features.Mediator.Handlers.BlogHandlers
                     Content = x.Content,
                     CreateDate = x.CreateDate,
                     AuthorName = x.Author.Name,
-                    CategoryName = x.Category.Name
+                    CategoryName = x.Category.Name,
+                    AuthorDescription = x.Author.Description,
+                    AuthorImageUrl = x.Author.ImageUrl
                 }).ToListAsync(cancellationToken);
         }
     }
