@@ -12,5 +12,6 @@
         public virtual Author Author { get; set; }
         public virtual Category Category { get; set; }
         public virtual List<TagCloud> TagClouds { get; set; }
+        public virtual List<Comment> Comments { get; set; }
     }
 }
